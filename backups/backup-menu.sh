@@ -1,7 +1,7 @@
 #!/bin/sh
 
 
-source './config'
+source './config-default'
 
 : ${BACKUP_LOCAL_DIR:='/var/sysadminscripts-backups/'}
 
@@ -15,3 +15,6 @@ echo "Backing up mysql databases..."
 source ./backup-mysql.sh
 echo "done."
 
+echo 'Commiting to git repository'
+source ./git-actions.sh
+echo 'done'
