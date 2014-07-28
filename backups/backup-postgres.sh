@@ -1,7 +1,11 @@
 #!/bin/sh
 
+if [ -z "$BACKUP_LOCAL_DIR" ] ; then
+  echo "BACKUP_LOCAL_DIR not set. Exiting."
+  exit -1
+fi
+
 : ${SUDO_USER:='postgres'}
-: ${BACKUP_LOCAL_DIR:='/var/sysadminscripts-backups/'}
 : ${POSTGRES_BACKUP_FILE:='postgres_dump'}
 
 mkdir -p "$BACKUP_LOCAL_DIR"
