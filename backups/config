@@ -1,0 +1,11 @@
+#!/bin/sh
+BACKUP_LOCAL_DIR=/var/sysadminscripts-backups/
+
+
+POSTGRES_USER='postgres'
+
+MYSQL_EXTRA_CONF='mysql-extra.cnf'
+
+if [ -f './config-extra' ] ; then
+  source ./config-extra
+fi
